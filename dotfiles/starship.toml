@@ -1,0 +1,79 @@
+# Nie dodawaj pustej linii na samym początku
+add_newline = false
+
+# --- GŁÓWNA KONFIGURACJA FORMATU ---
+format = """
+[  ](bg:#ffffff fg:#1793d1 bold)\
+[](bg:#1793d1 fg:#ffffff)\
+$username\
+[](bg:#ffffff fg:#1793d1)\
+$directory\
+[](fg:#ffffff bg:#c0e4f2)\
+$git_branch\
+$git_status\
+[](fg:#c0e4f2 bg:#86BBD8)\
+$c$elixir$elm$golang$haskell\
+[](fg:#86BBD8 bg:#06969A)\
+$java$julia$nodejs$nim$rust$docker_context\
+[ ](fg:#06969A)\
+"""
+
+[username]
+show_always = true
+style_user = "bg:#1793d1 fg:#ffffff bold"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:#ffffff fg:#1793d1 bold"
+format = "[ $path ]($style)"
+truncation_length = 3
+
+# --- KONFIGURACJA GIT (EFEKT MANJARO) ---
+
+[git_branch]
+symbol = "☊"
+style = "bg:#c0e4f2 fg:#000000 bold"
+# Jeśli są zmiany, kolor tekstu brancha zmieni się na bordowy/czerwony
+# To najstabilniejsza metoda w Starship bez zewnętrznych skryptów
+format = '[[ $symbol $branch ]($style)]($style)'
+
+[git_status]
+# Styl tła pozostaje spójny z branchem
+style = "bg:#c0e4f2 fg:#000000 bold"
+# KONFIGURACJA KOLORÓW DLA ZMIAN (Efekt Manjaro)
+# Starship zmieni kolor samej ikony statusu, gdy coś się dzieje:
+conflicted = "[=](bg:#c0e4f2 fg:#ff0000 bold)"
+ahead = "[⇡](bg:#c0e4f2 fg:#0000ff bold)"
+behind = "[⇣](bg:#c0e4f2 fg:#0000ff bold)"
+untracked = "[?](bg:#c0e4f2 fg:#D69E2E bold)" # Żółty dla nowych plików
+modified = "[!](bg:#c0e4f2 fg:#ff5f00 bold)"  # Pomarańczowy dla edytowanych
+staged = "[+](bg:#c0e4f2 fg:#008700 bold)"    # Zielony dla gotowych do commitu
+deleted = "[✘](bg:#c0e4f2 fg:#ff0000 bold)"
+format = '[([$all_status$ahead_behind]($style))]($style)'
+
+# --- JĘZYKI I NARZĘDZIA ---
+
+[c]
+symbol = "© "
+style = "bg:#86BBD8 fg:#000000 bold"
+format = '[ $symbol($version) ]($style)'
+
+[golang]
+symbol = "Hamster "
+style = "bg:#86BBD8 fg:#000000 bold"
+format = '[ $symbol($version) ]($style)'
+
+[rust]
+symbol = "Crab "
+style = "bg:#06969A fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[nodejs]
+symbol = "Node "
+style = "bg:#06969A fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[docker_context]
+symbol = "🐳 "
+style = "bg:#06969A fg:#ffffff bold"
+format = '[ $symbol$context ]($style)'
