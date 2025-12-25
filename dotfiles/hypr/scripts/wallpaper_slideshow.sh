@@ -2,11 +2,11 @@
 DIR="$HOME/Pictures/Wallpaper"
 INTERVAL=7200 #2h
 
-sleep 1
+trap 'kill $!; wait $!' USR1
 
 while true; do
-    WALLPAPER=$(find "$DIR" -type f | shuf -n 1)
-    swww img "$WALLPAPER" --transition-type wipe --transition-fps 60
     sleep $INTERVAL &
     wait $!
+    WALLPAPER=$(find "$DIR" -type f | shuf -n 1)
+    swww img "$WALLPAPER" --transition-type wipe --transition-fps 60
 done
