@@ -1,0 +1,1 @@
+Put this directory in ~/.local/share/nvim/site/HERE

@@ -150,6 +150,15 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- Spell check
+vim.opt.spell = true
+vim.opt.spelllang = { 'en', 'pl' }
+
+vim.keymap.set('n', '<leader>ts', function()
+  vim.opt.spell = not (vim.opt.spell:get())
+  print('Spellcheck: ' .. (vim.opt.spell:get() and 'On' or 'Off'))
+end, { desc = '[T]oggle [S]pellcheck' })
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
