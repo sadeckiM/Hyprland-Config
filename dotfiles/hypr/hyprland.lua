@@ -308,6 +308,7 @@ hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_them
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("pypr toggle term"))
 hl.bind("SUPER + O", hl.dsp.window.pin())
 hl.bind(mainMod .. " + F9", hl.dsp.exec_cmd("hyprshade toggle ~/.config/hypr/shaders/vibrance.glsl"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("~/.config/hypr/scripts/clone-terminal.sh"))
 
 -- Laptop's lid
 

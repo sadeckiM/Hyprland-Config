@@ -1,13 +1,5 @@
-# Nie dodawaj pustej linii na samym początku
 add_newline = false
 
-# --- GŁÓWNA KONFIGURACJA FORMATU (BIEL -> POMARAŃCZ -> GRADACJA) ---
-# 1. Logo:      Biel (#FFFFFF)
-# 2. Username:  Pomarańczowy (#E95420)
-# 3. Directory: Biel (#FFFFFF)
-# 4. Git:       Jasny Pomarańcz (#FFB380)
-# 5. Narzędzia: Ciemniejszy Pomarańcz (#FF7315)
-# 6. Koniec:    Jeszcze Ciemniejszy Pomarańcz (#B83B0F)
 format = """
 [  ](bg:#FFFFFF fg:#E95420 bold)\
 [](bg:#E95420 fg:#FFFFFF)\
@@ -34,10 +26,9 @@ style = "bg:#FFFFFF fg:#E95420 bold"
 format = "[ $path ]($style)"
 truncation_length = 3
 
-# --- KONFIGURACJA GIT ---
 [git_branch]
 symbol = ""
-style = "bg:#FFB380 fg:#333333 bold" # Ciemny tekst dla czytelności na jasnym tle
+style = "bg:#FFB380 fg:#333333 bold"
 format = '[[ $symbol $branch ]($style)]($style)'
 
 [git_status]
@@ -51,7 +42,6 @@ staged = "[+](bg:#FFB380 fg:#006622 bold)"
 deleted = "[✘](bg:#FFB380 fg:#CC0000 bold)"
 format = '[([$all_status$ahead_behind]($style))]($style)'
 
-# --- JĘZYKI I NARZĘDZIA ---
 [c]
 symbol = " "
 style = "bg:#FF7315 fg:#FFFFFF bold"
@@ -79,7 +69,7 @@ format = '[ $symbol$context ]($style)'
 
 [python]
 symbol = "󰌠 "
-style = "bg:#86BBD8 fg:#000000 bold"
+style = "bg:#FF7315 fg:#FFFFFF bold"
 format = '[ $symbol($virtualenv) ]($style)'
 detect_extensions = []
 detect_files = []
